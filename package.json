@@ -1,0 +1,29 @@
+{
+  "name": "lambda-pdf-report-demo",
+  "version": "1.0.0",
+  "description": "Demo of a Python-based Lambda function that generates PDF reports",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogenes1oliveira/lambda-pdf-report-demo.git"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "pdf",
+    "flask"
+  ],
+  "author": "Diógenes Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diogenes1oliveira/lambda-pdf-report-demo/issues"
+  },
+  "homepage": "https://github.com/diogenes1oliveira/lambda-pdf-report-demo#readme",
+  "devDependencies": {
+    "serverless-python-requirements": "^4.3.0",
+    "serverless-wsgi": "^1.7.2"
+  }
+}
