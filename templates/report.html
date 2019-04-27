@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Report</title>
+    <style type="text/css">
+      @page {
+        size: A4;
+      }
+
+
+      table {
+        border-width: 0;
+        border-collapse: collapse;
+        font-family: sans-serif;
+        font-size: 14px;
+        margin: 0;
+        table-layout: fixed;
+        width: 170mm;
+      }
+
+      .small-font {
+        font-size: 12px;
+      }
+
+      td,
+      th {
+        padding: 4px;
+      }
+
+      tr,
+      td,
+      th {
+        page-break-inside: avoid;
+      }
+
+      td.huge-padding,
+      th.huge-padding {
+        padding: 16px 4px;
+      }
+
+      td.huge-padding-top,
+      th.huge-padding-top {
+        padding-top: 16px;
+      }
+
+      td.medium-padding,
+      th.medium-padding {
+        padding: 8px 4px;
+      }
+
+      .shadowed {
+        background-color: #eee;
+      }
+
+      .thick-border {
+        border: solid black 2px;
+      }
+
+      .thick-border-left {
+        border-left: solid black 2px;
+      }
+
+      .thick-border-right {
+        border-right: solid black 2px;
+      }
+
+      .thick-border-top {
+        border-top: solid black 2px;
+      }
+
+      .thick-border-bottom {
+        border-bottom: solid black 2px;
+      }
+
+      .thin-border {
+        border: solid black 1px;
+      }
+
+      .thin-border-left {
+        border-left: solid black 1px;
+      }
+
+      .thin-border-right {
+        border-right: solid black 1px;
+      }
+
+      .thin-border-top {
+        border-top: solid black 1px;
+      }
+
+      .thin-border-bottom {
+        border-bottom: solid black 1px;
+      }
+
+      .no-border-left {
+        border-left-width: 0 !important;
+      }
+
+      .no-border-right {
+        border-right-width: 0 !important;
+      }
+
+      .no-border-top {
+        border-top-width: 0 !important;
+      }
+
+      .no-border-bottom {
+        border-bottom-width: 0 !important;
+      }
+
+      .align-center {
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .align-right-middle {
+        text-align: right;
+        vertical-align: middle;
+      }
+
+      .align-left-top {
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .align-center-bottom {
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .normal {
+        font-weight: normal;
+      }
+
+      .h1,
+      .h2 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .new-page {
+        page-break-before: always;
+      }
+
+      .footer {
+        margin: 0.5cm;
+      }
+
+      .break-word-anywhere {
+        break-word: break-all;
+        word-break: break-word;
+      }
+
+      .underlined {
+        border-bottom: solid black 1px;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="relatorio_sintetico">
+      <table class="thick-border">
+        <colgroup>
+          <col style="width: 4cm;" />
+          <col />
+          <col style="width: 3cm;" />
+        </colgroup>
+        <tr>
+          <td>
+          </td>
+          <td class="align-center h1">
+            GENERIC SAMPLE REPORT
+          </td>
+          <td class="align-center thin-border-left h2">
+            VERSION 02
+          </td>
+        </tr>
+      </table>
+
+      <table class="thick-border no-border-top">
+        <colgroup>
+          <col style="width: 2.5cm;" />
+          <col style="" />
+          <col style="width: 4.7cm;" />
+          <col style="" />
+        </colgroup>
+        <thead>
+          <tr>
+            <td colspan="4" class="bold">GENERIC COMPANY</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <th class="align-right-middle">Number</th>
+            <td>
+              {{ payment.get('number') or '-' }}
+            </td>
+          </tr>
+          <tr>
+            <th class="align-right-middle">Name</th>
+            <td>
+              {{ worker.get('name') or '-' }}
+            </td>
+            <th class="align-right-middle">Reference</th>
+            <td>
+              {{ payment.get('reference') }}
+            </td>
+          </tr>
+          <tr>
+            <th class="align-right-middle">Role</th>
+            <td>
+              {{ worker.get('role') or '-' }}
+            </td>
+            <th class="align-right-middle">Report date</th>
+            <td>
+              {{ payment.get('date') or '-' }}
+            </td>
+          </tr>
+          <tr>
+            <th class="align-right-middle">E-mail:</th>
+            <td>
+              {% if worker.get('email') %}
+              <a href="mailto:{{ worker.get('email') }}">{{ worker.get('email') }}</a>
+              {% endif %}
+            </td>
+            <th class="align-right-middle">Contract</th>
+            <td>
+              {{ contract.get('name') or '-' }}
+            </td>
+          </tr>
+          <tr>
+            <th class="align-right-middle">Phone</th>
+            <td>
+              {{ worker.get('phone') or '-' }}
+            </td>
+            <th class="align-right-middle">Code</th>
+            <td>
+              {{ contract.get('code') or '-' }}
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td class="align-center thin-border-top" colspan="4">
+              Information about the items and discounts
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <table class="thick-border no-border-top">
+        <colgroup>
+          <col style="width: 1.5cm;" />
+          <col style="" />
+          <col style="width: 2.5cm" />
+          <col style="width: 2.5cm;" />
+          <col style="width: 2.5cm;" />
+          <col style="width: 4cm;" />
+        </colgroup>
+        <thead>
+          <tr class="thick-border-bottom shadowed">
+            <th colspan="6">Items to be reimbursed</th>
+          </tr>
+          <tr class="thick-border-bottom">
+            <th class="thin-border-right align-center huge-padding">Index</th>
+            <th class="thin-border-right align-center huge-padding">Description</th>
+            <th class="thin-border-right align-center huge-padding">Code</th>
+            <th class="thin-border-right align-center huge-padding">Value</th>
+            <th class="thin-border-right align-center huge-padding">Discount</th>
+            <th class="align-center huge-padding">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+          <tr>
+            <td class="thin-border-right align-center">{{ loop.index }}</td>
+            <td class="thin-border-right align-center">{{ item.get('name') }}</td>
+            <td class="thin-border-right align-center">{{ item.get('code') }}</td>
+            <td class="thin-border-right align-center">{{ '%.2f' % (item.get('gross') or 0.0) }}</td>
+            <td class="thin-border-right align-center">{{ '%.2f' % (item.get('discount') or 0.0) }}</td>
+            <td class="align-center">{{ '%.2f' % (item.get('net') or 0.0) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <table class="thick-border no-border-top no-border-bottom">
+        <colgroup>
+          <col style="width: 3cm;" />
+          <col style="" />
+        </colgroup>
+        <tr>
+          <td colspan="2" class="medium-padding"></td>
+        </tr>
+        <tr>
+          <th class="align-right-middle">Bank:</th>
+          <td class="bold medium-padding">
+            {% if worker.get('bank') %}
+            {{ worker.get('bank') }}
+            {% else %}
+            _________________________________________
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <th class="align-right-middle">Branch number:</th>
+          <td class="bold medium-padding">
+            {% if worker.get('branch') %}
+            {{ worker.get('branch') }}
+            {% else %}
+            _________________________________________
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <th class="align-right-middle">Account number:</th>
+          <td class="bold medium-padding">
+            {% if worker.get('account') %}
+            {{ worker.get('account') }}
+            {% else %}
+            _________________________________________
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <th class="align-right-middle">Obs:</th>
+          <td class="bold medium-padding">
+            _________________________________________
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="huge-padding">
+          </td>
+      </table>
+
+      <table class="thick-border no-border-top">
+        <tr>
+          <td colspan="2" class="huge-padding">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="align-center">
+            _________________________________________
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2" class="align-center">
+            Signatures
+          </th>
+        </tr>
+        <tr>
+          <td colspan="2" class="huge-padding">
+          </td>
+        </tr>
+        <tr>
+          <td class="align-center">
+            {% if signatures.get('management') %}
+            <span class="underlined">
+              {{ signatures.get('management')['name'] }} - {{ signatures.get('management')['when'] }}
+            </span>
+            {% else %}
+            _________________________________________
+            {% endif %}
+          </td>
+          <td class="align-center">
+            {% if signatures.get('hr') %}
+            <span class="underlined">
+              {{ signatures.get('hr')['name'] }} - {{ signatures.get('hr')['when'] }}
+            </span>
+            {% else %}
+            _________________________________________
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td class="align-center">
+            Management
+          </td>
+          <td class="align-center">
+            Human Resources
+          </td>
+        </tr>
+      </table>
+
+      <div class="small-font footer">
+        Generated in {{ now | formatdatetime('%d/%m/%Y') }} at {{ now | formatdatetime('%H:%M') }}
+      </div>
+    </div>
+
+  </body>
+
+</html>

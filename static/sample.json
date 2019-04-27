@@ -1,0 +1,32 @@
+{
+  "values": {
+    "worker": {
+      "name": "John Silver",
+      "email": "john@silver.com",
+      "phone": "+1 222 2222",
+      "role": "Developer"
+    },
+    "contract": {
+      "name": "US Government",
+      "code": "0388"
+    },
+    "payment": {
+      "number": "1234",
+      "reference": "12",
+      "date": "2019-04-27"
+    },
+    "signatures": {
+      "hr": {
+        "name": "Mary Gold",
+        "when": "2019-04-27"
+      }
+    },
+    "items": [{
+      "name": "Product 1",
+      "code": "2834",
+      "gross": 900.0,
+      "discount": 88.0,
+      "net": 812.0
+    }]
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "values"
+  ],
+  "properties": {
+    "values": {
+      "$id": "#/properties/values",
+      "type": "object",
+      "title": "The Values Schema",
+      "required": [
+        "worker",
+        "contract",
+        "payment",
+        "signatures",
+        "items"
+      ],
+      "properties": {
+        "worker": {
+          "$id": "#/properties/values/properties/worker",
+          "type": "object",
+          "title": "The Worker Schema",
+          "required": [
+            "name",
+            "email",
+            "phone",
+            "role"
+          ],
+          "properties": {
+            "name": {
+              "$id": "#/properties/values/properties/worker/properties/name",
+              "type": "string",
+              "title": "The Name Schema",
+              "default": "",
+              "examples": [
+                "John Silver"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "email": {
+              "$id": "#/properties/values/properties/worker/properties/email",
+              "type": "string",
+              "title": "The Email Schema",
+              "default": "",
+              "examples": [
+                "john@silver.com"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "phone": {
+              "$id": "#/properties/values/properties/worker/properties/phone",
+              "type": "string",
+              "title": "The Phone Schema",
+              "default": "",
+              "examples": [
+                "+1 222 2222"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "role": {
+              "$id": "#/properties/values/properties/worker/properties/role",
+              "type": "string",
+              "title": "The Role Schema",
+              "default": "",
+              "examples": [
+                "Developer"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "contract": {
+          "$id": "#/properties/values/properties/contract",
+          "type": "object",
+          "title": "The Contract Schema",
+          "required": [
+            "name",
+            "code"
+          ],
+          "properties": {
+            "name": {
+              "$id": "#/properties/values/properties/contract/properties/name",
+              "type": "string",
+              "title": "The Name Schema",
+              "default": "",
+              "examples": [
+                "US Government"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "code": {
+              "$id": "#/properties/values/properties/contract/properties/code",
+              "type": "string",
+              "title": "The Code Schema",
+              "default": "",
+              "examples": [
+                "0388"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "payment": {
+          "$id": "#/properties/values/properties/payment",
+          "type": "object",
+          "title": "The Payment Schema",
+          "required": [
+            "number",
+            "reference",
+            "date"
+          ],
+          "properties": {
+            "number": {
+              "$id": "#/properties/values/properties/payment/properties/number",
+              "type": "string",
+              "title": "The Number Schema",
+              "default": "",
+              "examples": [
+                "1234"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "reference": {
+              "$id": "#/properties/values/properties/payment/properties/reference",
+              "type": "string",
+              "title": "The Reference Schema",
+              "default": "",
+              "examples": [
+                "12"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "date": {
+              "$id": "#/properties/values/properties/payment/properties/date",
+              "type": "string",
+              "title": "The Date Schema",
+              "default": "",
+              "examples": [
+                "2019-04-27"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "signatures": {
+          "$id": "#/properties/values/properties/signatures",
+          "type": "object",
+          "title": "The Signatures Schema",
+          "required": [
+            "hr"
+          ],
+          "properties": {
+            "hr": {
+              "$id": "#/properties/values/properties/signatures/properties/hr",
+              "type": "object",
+              "title": "The Hr Schema",
+              "required": [
+                "name",
+                "when"
+              ],
+              "properties": {
+                "name": {
+                  "$id": "#/properties/values/properties/signatures/properties/hr/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": [
+                    "Mary Gold"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "when": {
+                  "$id": "#/properties/values/properties/signatures/properties/hr/properties/when",
+                  "type": "string",
+                  "title": "The When Schema",
+                  "default": "",
+                  "examples": [
+                    "2019-04-27"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            }
+          }
+        },
+        "items": {
+          "$id": "#/properties/values/properties/items",
+          "type": "array",
+          "title": "The Items Schema",
+          "items": {
+            "$id": "#/properties/values/properties/items/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "name",
+              "code",
+              "gross",
+              "discount",
+              "net"
+            ],
+            "properties": {
+              "name": {
+                "$id": "#/properties/values/properties/items/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "examples": [
+                  "Product 1"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "code": {
+                "$id": "#/properties/values/properties/items/items/properties/code",
+                "type": "string",
+                "title": "The Code Schema",
+                "default": "",
+                "examples": [
+                  "2834"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "gross": {
+                "$id": "#/properties/values/properties/items/items/properties/gross",
+                "type": "integer",
+                "title": "The Gross Schema",
+                "default": 0,
+                "examples": [
+                  900
+                ]
+              },
+              "discount": {
+                "$id": "#/properties/values/properties/items/items/properties/discount",
+                "type": "integer",
+                "title": "The Discount Schema",
+                "default": 0,
+                "examples": [
+                  88
+                ]
+              },
+              "net": {
+                "$id": "#/properties/values/properties/items/items/properties/net",
+                "type": "integer",
+                "title": "The Net Schema",
+                "default": 0,
+                "examples": [
+                  812
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
