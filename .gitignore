@@ -112,4 +112,4 @@ node_modules/
 # IDE stuff
 .directory
 .vscode/
-
+.serverless/
