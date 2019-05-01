@@ -4,9 +4,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-localstack = "*"
-pylint = "*"
-autopep8 = "*"
 
 [packages]
 Flask = ">=1.0.2"
