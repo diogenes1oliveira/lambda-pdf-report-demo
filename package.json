@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/diogenes1oliveira/lambda-pdf-report-demo#readme",
   "devDependencies": {
+    "serverless-localstack": "^0.4.12",
     "serverless-python-requirements": "^4.3.0",
     "serverless-wsgi": "^1.7.2"
   }

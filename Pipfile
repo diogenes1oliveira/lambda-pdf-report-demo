@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+localstack = "*"
+pylint = "*"
+autopep8 = "*"
+
+[packages]
+Flask = ">=1.0.2"
+flask-weasyprint = ">=0.6"
+jsonschema = ">=2.6"
+
+[requires]
+python_version = "3.7"
