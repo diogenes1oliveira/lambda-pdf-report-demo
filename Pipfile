@@ -12,6 +12,7 @@ autopep8 = "*"
 Flask = ">=1.0.2"
 flask-weasyprint = ">=0.6"
 jsonschema = ">=2.6"
+flask-wtf = "*"
 
 [requires]
 python_version = "3.7"
