@@ -4,35 +4,41 @@ service: lambda-pdf-report-demo
 
 plugins:
   - serverless-python-requirements
-  - serverless-wsgi
+  - serverless-apigw-binary
 
 custom:
-  wsgi:
-    app: app.app
-    packRequirements: false
-
   pythonRequirements:
     dockerizePip: true
 
-  localstack:
-    host: http://localhost
-    stages:
-      - local
-    autostart: true
-    lambda:
-      mountCode: false
-    debug: true
+  apigwBinary:
+    types:
+      - "application/pdf"
 
 provider:
   name: aws
   runtime: python3.7
   stage: dev
   region: us-east-2
+  environment:
+    WKHTMLTOPDF_PATH: "/opt/bin/wkhtmltopdf"
+  usagePlan:
+    throttle:
+      burstLimit: 5
+      rateLimit: 2
 
 functions:
   app:
-    handler: wsgi_handler.handler
-
+    handler: app.lambda_handler
+    layers:
+      - { Ref: WkhtmltopdfLambdaLayer }
     events:
       - http: ANY /
       - http: "ANY {proxy+}"
+
+layers:
+  wkhtmltopdf:
+    # run download-wkhtml.sh to put the binary in this folder
+    path: var/wkhtmltopdf/
+    description: Provides the wkhtmltopdf binary
+    compatibleRuntimes:
+      - python3.7

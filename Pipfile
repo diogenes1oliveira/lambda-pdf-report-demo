@@ -6,10 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-Flask = ">=1.0.2"
-flask-weasyprint = ">=0.6"
+Flask = ">=1.0"
 jsonschema = ">=2.6"
-flask-wtf = "*"
+flask-wtf = ">=0.14"
+pdfkit = ">=0.6"
+serverless-wsgi = "*"
 
 [requires]
 python_version = "3.7"
